@@ -1,5 +1,4 @@
 class PlacesController < ApplicationController
-
   ## perform a paginated query:
 #@places = Place.paginate(:page => params[:page])
 
@@ -13,9 +12,16 @@ class PlacesController < ApplicationController
     @places = Place.paginate(page: params[:page]) 
   end
 
-
   def new
     @place = Place.new
   end
 
+  def create
+    Place.create(place_params)
+    redirect_to root_path
+  end
+
+  def place_params
+    params.require(:place).permit(:name, :description, :address)
+  end
 end
