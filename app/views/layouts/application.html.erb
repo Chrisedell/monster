@@ -14,13 +14,16 @@
       <button class="navbar-toggler navbar-toggle-right" type="button" data-toggle="collapse" data-target="navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand" href="#">Monster</a>
-      <%= link_to 'Monster', '#', class: 'navbar_brand' %>
+      
+      <%= link_to 'Monster', root_path, class: 'navbar-brand' %>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav mr-auto mt-2 mt-md-0">
           <li class="nav-item">
-            <a class="nav-link" href="#fc9b0a">Link</a>
+            <%= link_to new_place_path, class: 'nav-link' do %>
+              <i class="fa fa-plus-circle"></i>
+              New Place
+              <% end %>
           </li>
          </ul>
        </div>
