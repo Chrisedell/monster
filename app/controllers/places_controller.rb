@@ -18,8 +18,6 @@ class PlacesController < ApplicationController
   end
 
   def create
-    puts "-----BELOW ARE TEH PAMRAMS------------------"
-    puts (place_params)
     @place = current_user.places.create(place_params)
       if @place.valid?
         redirect_to root_path
