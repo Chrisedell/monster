@@ -7,5 +7,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
  
   has_many :places
-  has_many :comments        
+  has_many :comments
+  has_many :photos       
 end
